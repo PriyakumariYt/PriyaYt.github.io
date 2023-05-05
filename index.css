@@ -241,12 +241,12 @@ main {
   color: goldenrod;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 900px) {
   .home-row h1 {
     font-size: 1.5rem;
   }
   .home-row h4 {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     font-weight: 350;
     line-height: 1.1;
   }
