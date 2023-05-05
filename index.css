@@ -241,7 +241,7 @@ main {
   color: goldenrod;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 450px) {
   .home-row h1 {
     font-size: 1.5rem;
   }
