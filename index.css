@@ -8,8 +8,8 @@
 }
 :root {
   --color: white;
-  --backgroundColor: #000000;
-  --sideBGColor: #131212;
+  --backgroundColor: #070b13;
+  --sideBGColor: #0e0e0f;
   --themeColor: #c9ba1c;
   --iconBGColor: #2c2f3f;
   --textColor: #2c2828;
@@ -45,7 +45,7 @@ body.active {
   --box-shadow-inset: 0.4rem 0.4rem 1rem #a33b3b inset,
     -0.4rem -0.4rem 1rem #be6464 inset;
 }
-/* yahi tak */
+
 /* header  */
 .header {
   height: 100vh;
@@ -61,19 +61,19 @@ body.active {
   transition: 0.4s;
   z-index: 99;
 }
-.header  .profile {
+.header .profile {
   text-align: center;
   margin: 10px 0;
 }
-.header  .profile img {
+.header .profile img {
   border-radius: 50%;
-  /* margin: 1rem 0; */
-  width: 160px;
-  height: 160px;
+
+  width: 170px;
+  height: 170px;
   border: 10px solid var(--iconBGColor);
   object-fit: cover;
 }
-.header  .profile h1 {
+.header .profile h1 {
   color: var(--color);
   font-weight: 600px;
 }
@@ -99,15 +99,15 @@ body.active {
   background-color: var(--themeColor);
   transform: rotate(360deg);
 }
-.header  .nav {
+.header .nav {
   margin-top: 30px;
   margin-left: 20px;
 }
-.header  nav ul li {
+.header nav ul li {
   list-style: none;
   /* margin-left: 50%; */
 }
-.header  nav ul li a {
+.header nav ul li a {
   display: inline-block;
   text-decoration: none;
   padding: 7px 10px;
@@ -121,7 +121,7 @@ body.active {
   transition: 0.4s;
 }
 
-.header  nav ul li a:hover {
+.header nav ul li a:hover {
   color: var(--themeColor);
 }
 /* .footer {
@@ -157,7 +157,7 @@ body.active {
   .header {
     left: -300px;
   }
- .header .footer {
+  .header .footer {
     left: -300px;
   }
   #Menubtn {
