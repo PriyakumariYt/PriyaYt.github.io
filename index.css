@@ -564,11 +564,12 @@ hr {
   border: 1px solid #94923a;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.5s;
 }
 .footer-socialIcons .fab:hover {
   background-color: var(--themeColor);
   color: var(--color);
-  transform: translate(-7px);
+ transform: scale(1.08);
   box-shadow: var(--box-shadow-inset);
 }
 /* THEME TOGGLE */
