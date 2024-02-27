@@ -23,7 +23,7 @@ body {
   background: var(--backgroundColor);
   scroll-behavior: smooth;
 }
-/* yaha pe toggle */
+
 body.active {
   --color: black;
   --backgroundColor: linear-gradient(
@@ -34,25 +34,21 @@ body.active {
     #1d8b5f,
     #91c71e
   );
-
-  --sideBGColor: #164437d3;
-  --iconBGColor: #649183;
-
-  --light-color: #918c8c;
-  --bg-color: #cbb6b6;
-  --border: 0.1rem solid rgba(81, 144, 199, 0.4);
-  --box-shadow: 0.4rem 0.4rem 1rem #bba8a8, -0.4rem -0.4rem 1rem #813333;
-  --box-shadow-inset: 0.4rem 0.4rem 1rem #a33b3b inset,
+ --sideBGColor: #164437d3;
+ --iconBGColor: #649183;
+ --light-color: #918c8c;
+ --bg-color: #cbb6b6;
+ --border: 0.1rem solid rgba(81, 144, 199, 0.4);
+ --box-shadow: 0.4rem 0.4rem 1rem #bba8a8, -0.4rem -0.4rem 1rem #813333;
+ --box-shadow-inset: 0.4rem 0.4rem 1rem #a33b3b inset,
     -0.4rem -0.4rem 1rem #be6464 inset;
 }
-
 /* header  */
 .header {
   height: 100vh;
   width: 300px;
   padding: 15px 30px;
   background-color: var(--sideBGColor);
-
   overflow:hidden;
   position: fixed;
   left: 0;
@@ -67,7 +63,6 @@ body.active {
 }
 .header .profile img {
   border-radius: 50%;
-
   width: 170px;
   height: 170px;
   border: 10px solid var(--iconBGColor);
@@ -105,7 +100,6 @@ body.active {
 }
 .header nav ul li {
   list-style: none;
-  /* margin-left: 50%; */
 }
 .header nav ul li a {
   display: inline-block;
@@ -124,16 +118,6 @@ body.active {
 .header nav ul li a:hover {
   color: var(--themeColor);
 }
-/* .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.footer p {
-  color: var(--textColor);
-  font-size: 20px;
-  letter-spacing: 0.6px;
-} */
 
 /* mobile nav toggle */
 #Menubtn {
@@ -201,9 +185,7 @@ main {
   position: relative;
 }
 .home-row {
-  /* margin-left: 260px; */
   display: flex;
-
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -230,8 +212,6 @@ main {
   margin: 40px 0;
   transition: 0.5s;
   font-weight: 500;
-
-  /* background: transparent; */
 }
 .home-row .btn:hover {
   color: #222;
@@ -254,11 +234,6 @@ main {
     padding: 0%;
   }
 }
-/* 
-#about {
-  background-color: #292626;
-} */
-
 /* about section start  */
 
 .heading {
@@ -286,7 +261,6 @@ main {
 }
 .about .row .content h3 {
   margin-left: 1rem;
-
   font-size: 3rem;
   color: var(--color);
   line-height: 1.8;
@@ -303,7 +277,6 @@ main {
   padding: 1rem;
   margin: 10px 0;
 }
-
 .about .btn {
   text-decoration: none;
   color: var(--color);
@@ -314,8 +287,6 @@ main {
   transition: 0.5s;
   margin-left: 30px;
   margin-bottom: 50px;
-
-  /* background: transparent; */
 }
 /* .home-row  */
 .about .btn:hover {
@@ -342,25 +313,14 @@ main {
   }
 }
 
-/* @media (max-width: 900px) {
-  html{
-    font-size: 50%;
-  }
-} */
-
-/* .skills {
-  /* background: #292626; */
-/* background: #00a78e; */
-
 .skills .heading {
   margin: 3rem;
 }
-
 .skills_div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  padding: 5rem 0;
+  padding: 2rem 0;
   margin: 0 30px;
 }
 .skills_card {
@@ -382,23 +342,18 @@ main {
 
 .skills_card:hover {
   transform: scale(1.08);
-  /* transform: rotate(60deg); */
-  /* color: #27ae60;  */
   color: #ccc;
 }
-
 .image_div {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 0px;
 }
-
 .image_div > img {
   width: 30%;
   height: 89%;
 }
-
 .skills_text {
   display: flex;
   justify-content: center;
@@ -407,16 +362,13 @@ main {
   -webkit-align-items: none !important;
   display: -webkit-box !important;
 }
-
 .skills_text > #skill_title {
   font-size: 17px !important;
 }
-
 @media (max-width: 600px) {
   #skill_title {
     font-size: 13px !important;
   }
-
   .skills_div {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -425,7 +377,6 @@ main {
     margin: 0 30px;
   }
 }
-
 /* started........................................ */
 .portfolio {
   padding: 70px 0;
@@ -434,14 +385,12 @@ main {
 .project-container {
   padding-top: 3rem;
   width: 90%;
-  /* height: 50%; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin: auto;
 }
-
 .project-image {
   display: flex;
   flex-basis: 48%;
@@ -455,7 +404,6 @@ main {
   width: 100%;
   height: 100%;
   border-radius: 7px;
-  /* object-fit: cover; */
 }
 .overlay {
   width: 100%;
