@@ -246,6 +246,7 @@ main {
 
 .heading span {
   color: goldenrod;
+  /* color: #2dd894; */
   text-transform: uppercase;
 }
 .about .row {
@@ -392,7 +393,7 @@ main {
   margin: auto;
 }
 .project-image {
-  display: flex;
+display: flex;
   flex-basis: 48%;
   text-align: center;
   border-radius: 7px;
@@ -412,7 +413,7 @@ main {
   top: 0;
   border-radius: 7px;
   cursor: pointer;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), #009688);
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), #009688); */
   opacity: 0;
   transition: 1s;
 }
@@ -429,7 +430,8 @@ main {
   transition: 0.5s;
 }
 .layer:hover {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), #b9be70);
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), #b9be70); */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), #44b9ae);
   border-radius: 7px;
 }
 .layer h3 {
