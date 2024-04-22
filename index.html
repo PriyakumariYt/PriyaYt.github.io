@@ -224,15 +224,18 @@
  
         <div class="btn-group">
             <button class="all_navBtn all_navBtn--active navbar-menu-item" onclick="filterProjects('All')">All</button>
+            <button class="all_navBtn navbar-menu-item" onclick="filterProjects('Mern')">Mern</button>
             <button class="all_navBtn navbar-menu-item" onclick="filterProjects('Frontend')">Frontend</button>
             <button class="all_navBtn navbar-menu-item" onclick="filterProjects('Backend')">Backend</button>
             <button class="all_navBtn navbar-menu-item" onclick="filterProjects('React')">React</button>
-            <button class="all_navBtn navbar-menu-item" onclick="filterProjects('Mern')">Mern</button>
-            <button class="all_navBtn navbar-menu-item" onclick="filterProjects('Small Projects')">Small Projects</button>
+        <button class="all_navBtn navbar-menu-item" onclick="filterProjects('Small Projects')">Small Project</button>
         </div>
     </nav>
           
     <div id="projectContainer" class="project-container"></div>
+    <div class="addMore">
+      <button id="loadMoreButton" class="load-more-btn ">Load More</button>
+     </div>
 
       <!-- project end -->
       <!-- .............CONTACT  -->

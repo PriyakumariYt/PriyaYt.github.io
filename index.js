@@ -226,12 +226,163 @@ const project = [
       "website": "https://priyakumariyt.github.io/React-Podcast-website-Clone/",
       "github": "https://github.com/PriyakumariYt/React-Podcast-website-Clone"
     }
+  },
+  {
+    "id": 22,
+    "name": "Jokes Generator",
+    "category": "Small Project",
+    "image": "image/jokes.png",
+    "links": {
+      "website": "https://priyakumariyt.github.io/JokesGeneratorApi/",
+      "github": "https://github.com/PriyakumariYt/JokesGeneratorApi"
+    }
+  }, {
+    "id": 23,
+    "name": "Pyramid",
+    "category": "Small Project",
+    "image": "image/pyramid.png",
+    "links": {
+      "website": "https://css-animation-rose.vercel.app/",
+      "github": "https://github.com/PriyakumariYt/CssAnimation/tree/main/Pyramid"
+    }
+  },
+  {
+    "id": 24,
+    "name": "Todo App",
+    "category": "React",
+    "image": "image/todo.png",
+    "links": {
+      "website": "https://priyakumariyt.github.io/TodoList_Crud_Operation/",
+      "github": "https://github.com/PriyakumariYt/TodoList_Crud_Operation"
+    }
+  },
+  {
+    "id": 25,
+    "name": "Quotes Generator",
+    "category": "Small Project",
+    "image": "image/Quotes.png",
+    "links": {
+      "website": "https://priyakumariyt.github.io/QuotesGenerator/",
+      "github": "https://github.com/PriyakumariYt/QuotesGenerator"
+    }
+  },
+  {
+    "id": 26,
+    "name": "Cube",
+    "category": "Small Project",
+    "image": "image/Cube.png",
+    "links": {
+      "website": "https://css-animation-3d.vercel.app/",
+      "github": "https://github.com/PriyakumariYt/CssAnimation/tree/main/cube"
+    }
+  },
+  {
+    "id": 27,
+    "name": "Calculator",
+    "category": "Small Project",
+    "image": "image/Calculator.png",
+    "links": {
+      "website": "https://codepen.io/PriyakumariYt/pen/zYmMadR",
+      "github": "https://github.com/PriyakumariYt/calculator"
+    }
+  },
+  {
+    "id": 28,
+    "name": "Job Applied App",
+    "category": "Frontend",
+    "image": "image/Job Applied.png",
+    "links": {
+      "website": "https://priyakumariyt.github.io/JobApplied_App/",
+      "github": "https://github.com/PriyakumariYt/JobApplied_App"
+    }
   }
 ]
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const projectContainer = document.getElementById("projectContainer");
+//   const navbarMenuItems = document.querySelectorAll(".navbar-menu-item");
+
+//   // Function to display projects based on category
+//   function filterAndDisplayProjects(projects, category) {
+//       // Clear previous projects from container
+//       projectContainer.innerHTML = '';
+
+//       // Filter projects based on category
+//       const filteredProjects = projects.filter(project => project.category === category);
+
+//       // Display filtered projects
+//       filteredProjects.forEach(project => {
+//           const { name, category, image, links } = project;
+//           const projectCard = createProjectCard(name, image, links.website, links.github);
+//           projectContainer.appendChild(projectCard);
+//       });
+//   }
+
+//   // Add click event listeners to navbar menu items
+//   navbarMenuItems.forEach(item => {
+
+//       item.addEventListener("click", function () {
+//           navbarMenuItems.forEach(navItem => navItem.classList.remove('active'));
+
+//           // Add the 'active' class to the clicked navbar item
+//           this.classList.add('active');
+//           const category = this.textContent.trim();
+//           if (category === "All") {
+//               displayAllProjects(project); // Display all projects if "All" is clicked
+//           } else {
+//               filterAndDisplayProjects(project, category); // Otherwise, filter projects based on category
+//           }
+//       });
+//   });
+
+//   // Function to display all projects
+//   function displayAllProjects(projects) {
+//       // Clear previous projects from container
+//       projectContainer.innerHTML = '';
+
+//       // Display all projects
+//       projects.forEach(project => {
+//           const { name, image, links } = project;
+//           const projectCard = createProjectCard(name, image, links.website, links.github);
+//           projectContainer.appendChild(projectCard);
+//       });
+//   }
+
+//   // Function to create a project card
+//   function createProjectCard(name, imageSrc, websiteLink, githubLink) {
+//       const projectCard = document.createElement("div");
+//       projectCard.classList.add("project");
+
+//       projectCard.innerHTML = `
+     
+//           <div class="project-image">
+//               <img src="${imageSrc}" alt="${name}" />
+//               <div class="overlay"></div>
+//               <div class="layer">
+//                   <h3>${name}<hr />
+//                       <div class="link-icon">
+//                           <a href="${websiteLink}" target="_blank"><i class="fas fa-link"></i></a>
+//                           <a href="${githubLink}" target="_blank"><i class="fab fa-github"></i></a>
+//                       </div>
+//                   </h3>
+//               </div>
+//           </div>
+      
+//       `;
+//       return projectCard;
+//   }
+
+//   // Initially display all projects
+//   displayAllProjects(project);
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
   const projectContainer = document.getElementById("projectContainer");
   const navbarMenuItems = document.querySelectorAll(".navbar-menu-item");
+  const loadMoreButton = document.getElementById("loadMoreButton");
+
+  let projectsToShow = 6; // Number of projects initially to show
+  let projects = project.slice(0, projectsToShow); // Slice the projects array to get the initial set of projects
 
   // Function to display projects based on category
   function filterAndDisplayProjects(projects, category) {
@@ -242,16 +393,18 @@ document.addEventListener("DOMContentLoaded", function () {
       const filteredProjects = projects.filter(project => project.category === category);
 
       // Display filtered projects
-      filteredProjects.forEach(project => {
-          const { name, category, image, links } = project;
-          const projectCard = createProjectCard(name, image, links.website, links.github);
-          projectContainer.appendChild(projectCard);
-      });
+      displayProjects(filteredProjects);
+
+      // Show or hide the load more button based on the category
+      if (category === "All") {
+          loadMoreButton.style.display = "block"; // Show load more button for "All" category
+      } else {
+          loadMoreButton.style.display = "none"; // Hide load more button for other categories
+      }
   }
 
   // Add click event listeners to navbar menu items
   navbarMenuItems.forEach(item => {
-
       item.addEventListener("click", function () {
           navbarMenuItems.forEach(navItem => navItem.classList.remove('active'));
 
@@ -259,20 +412,20 @@ document.addEventListener("DOMContentLoaded", function () {
           this.classList.add('active');
           const category = this.textContent.trim();
           if (category === "All") {
-              displayAllProjects(project); // Display all projects if "All" is clicked
+              displayProjects(project); // Display all projects if "All" is clicked
           } else {
               filterAndDisplayProjects(project, category); // Otherwise, filter projects based on category
           }
       });
   });
 
-  // Function to display all projects
-  function displayAllProjects(projects) {
+  // Function to display projects
+  function displayProjects(projectsToDisplay) {
       // Clear previous projects from container
       projectContainer.innerHTML = '';
 
-      // Display all projects
-      projects.forEach(project => {
+      // Display projects
+      projectsToDisplay.forEach(project => {
           const { name, image, links } = project;
           const projectCard = createProjectCard(name, image, links.website, links.github);
           projectContainer.appendChild(projectCard);
@@ -285,7 +438,6 @@ document.addEventListener("DOMContentLoaded", function () {
       projectCard.classList.add("project");
 
       projectCard.innerHTML = `
-     
           <div class="project-image">
               <img src="${imageSrc}" alt="${name}" />
               <div class="overlay"></div>
@@ -298,12 +450,17 @@ document.addEventListener("DOMContentLoaded", function () {
                   </h3>
               </div>
           </div>
-      
       `;
       return projectCard;
   }
 
-  // Initially display all projects
-  displayAllProjects(project);
-});
+  // Initially display the first set of projects
+  displayProjects(projects);
 
+  // Load more button click event
+  loadMoreButton.addEventListener("click", function () {
+      projectsToShow += 6; // Increase the number of projects to show
+      projects = project.slice(0, projectsToShow); // Update the projects array with the new set
+      displayProjects(projects); // Display the updated set of projects
+  });
+});
