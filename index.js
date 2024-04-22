@@ -231,7 +231,7 @@ const project = [
     "id": 22,
     "name": "Jokes Generator",
     "category": "Small Project",
-    "image": "image/jokes.png",
+    "image": "image/Jokes.png",
     "links": {
       "website": "https://priyakumariyt.github.io/JokesGeneratorApi/",
       "github": "https://github.com/PriyakumariYt/JokesGeneratorApi"
