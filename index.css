@@ -241,7 +241,7 @@ main {
   font-size: 4rem;
   color: var(--color);
   text-transform: uppercase;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .heading span {
@@ -315,7 +315,8 @@ main {
 }
 
 .skills .heading {
-  margin: 3rem;
+  margin: 2rem;
+ 
 }
 .skills_div {
   display: grid;
@@ -511,7 +512,7 @@ hr {
   font-size: 20px;
   color: #acb653;
   margin: 40px 10px 0;
-  margin-bottom: 50px;
+
   line-height: 40px;
   border: 1px solid #94923a;
   border-radius: 5px;
@@ -599,6 +600,7 @@ hr {
 
 
   .addMore{
+    margin-bottom: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
