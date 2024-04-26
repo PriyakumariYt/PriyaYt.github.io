@@ -295,6 +295,16 @@ const project = [
       "website": "https://priyakumariyt.github.io/JobApplied_App/",
       "github": "https://github.com/PriyakumariYt/JobApplied_App"
     }
+  },
+  {
+    "id": 29,
+    "name": "Weather App",
+    "category": "React",
+    "image": "image/Weatherapp.png",
+    "links": {
+      "website": "https://weather-app-phi-mauve-30.vercel.app/",
+      "github": "https://github.com/PriyakumariYt/WeatherApp_Assignment"
+    }
   }
 ]
 
