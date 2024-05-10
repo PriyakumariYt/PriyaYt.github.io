@@ -708,3 +708,8 @@ box-shadow:(0 0px 2px rgba(rgb(17, 215, 230), 1));
 .cf:after {
    clear: both;
 }
+@media (max-width: 786px) {
+  form{
+    width: 90%;
+  }
+  }
