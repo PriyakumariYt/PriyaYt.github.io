@@ -1,4 +1,3 @@
-
 //<!-- MOBILE Toggle -->
 let Menubtn = document.getElementById("Menubtn");
 Menubtn.addEventListener("click", function (e) {
@@ -6,13 +5,12 @@ Menubtn.addEventListener("click", function (e) {
   this.classList.toggle("fa-times");
 });
 
- // toggle theme
+// toggle theme
 let themeToggle = document.getElementById("theme-toggler");
 themeToggle.addEventListener("click", function (el) {
   document.querySelector("body").classList.toggle("active");
   this.classList.toggle("fa-sun");
 });
-
 
 // project
 
@@ -333,84 +331,6 @@ const project = [
   },
 ];
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   const projectContainer = document.getElementById("projectContainer");
-//   const navbarMenuItems = document.querySelectorAll(".navbar-menu-item");
-
-//   // Function to display projects based on category
-//   function filterAndDisplayProjects(projects, category) {
-//       // Clear previous projects from container
-//       projectContainer.innerHTML = '';
-
-//       // Filter projects based on category
-//       const filteredProjects = projects.filter(project => project.category === category);
-
-//       // Display filtered projects
-//       filteredProjects.forEach(project => {
-//           const { name, category, image, links } = project;
-//           const projectCard = createProjectCard(name, image, links.website, links.github);
-//           projectContainer.appendChild(projectCard);
-//       });
-//   }
-
-//   // Add click event listeners to navbar menu items
-//   navbarMenuItems.forEach(item => {
-
-//       item.addEventListener("click", function () {
-//           navbarMenuItems.forEach(navItem => navItem.classList.remove('active'));
-
-//           // Add the 'active' class to the clicked navbar item
-//           this.classList.add('active');
-//           const category = this.textContent.trim();
-//           if (category === "All") {
-//               displayAllProjects(project); // Display all projects if "All" is clicked
-//           } else {
-//               filterAndDisplayProjects(project, category); // Otherwise, filter projects based on category
-//           }
-//       });
-//   });
-
-//   // Function to display all projects
-//   function displayAllProjects(projects) {
-//       // Clear previous projects from container
-//       projectContainer.innerHTML = '';
-
-//       // Display all projects
-//       projects.forEach(project => {
-//           const { name, image, links } = project;
-//           const projectCard = createProjectCard(name, image, links.website, links.github);
-//           projectContainer.appendChild(projectCard);
-//       });
-//   }
-
-//   // Function to create a project card
-//   function createProjectCard(name, imageSrc, websiteLink, githubLink) {
-//       const projectCard = document.createElement("div");
-//       projectCard.classList.add("project");
-
-//       projectCard.innerHTML = `
-     
-//           <div class="project-image">
-//               <img src="${imageSrc}" alt="${name}" />
-//               <div class="overlay"></div>
-//               <div class="layer">
-//                   <h3>${name}<hr />
-//                       <div class="link-icon">
-//                           <a href="${websiteLink}" target="_blank"><i class="fas fa-link"></i></a>
-//                           <a href="${githubLink}" target="_blank"><i class="fab fa-github"></i></a>
-//                       </div>
-//                   </h3>
-//               </div>
-//           </div>
-      
-//       `;
-//       return projectCard;
-//   }
-
-//   // Initially display all projects
-//   displayAllProjects(project);
-// });
-
 document.addEventListener("DOMContentLoaded", function () {
   const projectContainer = document.getElementById("projectContainer");
   const navbarMenuItems = document.querySelectorAll(".navbar-menu-item");
@@ -421,58 +341,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to display projects based on category
   function filterAndDisplayProjects(projects, category) {
-      // Clear previous projects from container
-      projectContainer.innerHTML = '';
+    projectContainer.innerHTML = "";
 
-      // Filter projects based on category
-      const filteredProjects = projects.filter(project => project.category === category);
+    // Filter projects based on category
+    const filteredProjects = projects.filter(
+      (project) => project.category === category
+    );
 
-      // Display filtered projects
-      displayProjects(filteredProjects);
+    // Display filtered projects
+    displayProjects(filteredProjects);
 
-      // Show or hide the load more button based on the category
-      if (category === "All") {
-          loadMoreButton.style.display = "block"; // Show load more button for "All" category
-      } else {
-          loadMoreButton.style.display = "none"; // Hide load more button for other categories
-      }
+    if (category === "All") {
+      loadMoreButton.style.display = "block";
+    } else {
+      loadMoreButton.style.display = "none";
+    }
   }
 
   // Add click event listeners to navbar menu items
-  navbarMenuItems.forEach(item => {
-      item.addEventListener("click", function () {
-          navbarMenuItems.forEach(navItem => navItem.classList.remove('active'));
+  navbarMenuItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      navbarMenuItems.forEach((navItem) => navItem.classList.remove("active"));
 
-          // Add the 'active' class to the clicked navbar item
-          this.classList.add('active');
-          const category = this.textContent.trim();
-          if (category === "All") {
-              displayProjects(project); // Display all projects if "All" is clicked
-          } else {
-              filterAndDisplayProjects(project, category); // Otherwise, filter projects based on category
-          }
-      });
+      // Add the 'active' class to the clicked navbar item
+      this.classList.add("active");
+      const category = this.textContent.trim();
+      if (category === "All") {
+        displayProjects(project); // Display all projects if "All" is clicked
+      } else {
+        filterAndDisplayProjects(project, category); // Otherwise, filter projects based on category
+      }
+    });
   });
 
   // Function to display projects
   function displayProjects(projectsToDisplay) {
-      // Clear previous projects from container
-      projectContainer.innerHTML = '';
+    // Clear previous projects from container
+    projectContainer.innerHTML = "";
 
-      // Display projects
-      projectsToDisplay.forEach(project => {
-          const { name, image, links } = project;
-          const projectCard = createProjectCard(name, image, links.website, links.github);
-          projectContainer.appendChild(projectCard);
-      });
+    // Display projects
+    projectsToDisplay.forEach((project) => {
+      const {name, image, links} = project;
+      const projectCard = createProjectCard(
+        name,
+        image,
+        links.website,
+        links.github
+      );
+      projectContainer.appendChild(projectCard);
+    });
   }
 
   // Function to create a project card
   function createProjectCard(name, imageSrc, websiteLink, githubLink) {
-      const projectCard = document.createElement("div");
-      projectCard.classList.add("project");
+    const projectCard = document.createElement("div");
+    projectCard.classList.add("project");
 
-      projectCard.innerHTML = `
+    projectCard.innerHTML = `
           <div class="project-image">
               <img src="${imageSrc}" alt="${name}" />
               <div class="overlay"></div>
@@ -486,7 +411,7 @@ document.addEventListener("DOMContentLoaded", function () {
               </div>
           </div>
       `;
-      return projectCard;
+    return projectCard;
   }
 
   // Initially display the first set of projects
@@ -494,8 +419,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Load more button click event
   loadMoreButton.addEventListener("click", function () {
-      projectsToShow += 6; // Increase the number of projects to show
-      projects = project.slice(0, projectsToShow); // Update the projects array with the new set
-      displayProjects(projects); // Display the updated set of projects
+    projectsToShow += 6;
+    projects = project.slice(0, projectsToShow);
+    displayProjects(projects);
   });
 });
